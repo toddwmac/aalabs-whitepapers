@@ -84,9 +84,9 @@
       }
 
       function renderList(paths){
-        const files = paths.filter(p => p !== 'index.html' && p.endsWith('-AppliedAILabs.html')).sort((a,b)=>a.localeCompare(b));
+        const files = paths.filter(p => p !== 'index.html' && p.includes('-AppliedAILabs')).sort((a,b)=>a.localeCompare(b));
         if(!files.length){
-          listingEl.innerHTML = '<p class="muted">No matching files found (looking for files ending with "-AppliedAILabs.html").</p>';
+          listingEl.innerHTML = '<p class="muted">No matching files found (looking for files containing "-AppliedAILabs").</p>';
           return;
         }
         const ul = document.createElement('ul');
